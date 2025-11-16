@@ -1,49 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Accueil Dev Tools</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 40px;
-    }
-    a {
-      padding: 15px 30px;
-      background: #fff;
-      color: #764ba2;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      transition: background 0.3s, color 0.3s;
-    }
-    a:hover {
-      background: #764ba2;
-      color: #fff;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Normandie RP DEV</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    max-width: 600px;
+  }
+
+  a.button {
+    padding: 15px 30px;
+    background: #fff;
+    color: #764ba2;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+  }
+
+  a.button:hover {
+    background: #764ba2;
+    color: #fff;
+    transform: scale(1.05);
+  }
+
+  @media(max-width:600px) {
+    h1 { font-size: 2em; }
+    p { font-size: 1em; padding: 0 20px; }
+    a.button { padding: 12px 24px; }
+  }
+</style>
 </head>
 <body>
-  <h1>Bienvenue dans le guide des outils de développement</h1>
-  <p>Découvrez tous les outils essentiels pour développer sur Discord et ZetaRP.</p>
-  <a href="tableau.html">Accéder au tableau des outils</a>
+
+<h1>Normandie RP DEV</h1>
+<p>Explorez tous les outils et rôles essentiels pour gérer vos serveurs, vos projets et votre communauté. Accédez facilement aux tableaux et à la hiérarchie des rôles pour mieux organiser vos équipes.</p>
+<a href="roles_final.html" class="button">Voir la hiérarchie des rôles</a>
+
 </body>
 </html>
