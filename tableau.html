@@ -1,46 +1,60 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tableau des outils pour dev</title>
   <style>
-    body{
-      font-family: Arial, sans-serif;
-      margin:0;
-      padding:40px;
-      background:#0f172a;
-      color:#e2e8f0;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
     }
-    h1{
-      text-align:center;
-      margin-bottom:30px;
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
     }
-    table{
-      width:100%;
-      border-collapse:collapse;
-      background:#1e293b;
-      border-radius:12px;
-      overflow:hidden;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
-    th,td{
-      padding:14px 16px;
-      border-bottom:1px solid rgba(255,255,255,0.05);
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: left;
     }
-    th{
-      background:#334155;
-      text-align:left;
-      font-size:15px;
-      font-weight:700;
+    th {
+      background: rgba(255,255,255,0.15);
+      font-weight: 700;
     }
-    tr:hover td{
-      background:#293548;
+    tr:hover td {
+      background: rgba(255,255,255,0.1);
+    }
+    a.back {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      background: #fff;
+      color: #764ba2;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s, color 0.3s;
+    }
+    a.back:hover {
+      background: #764ba2;
+      color: #fff;
     }
   </style>
 </head>
 <body>
   <h1>Tableau des outils pour développeurs</h1>
-
   <table>
     <thead>
       <tr>
@@ -110,12 +124,13 @@
         <td>Figma, Adobe XD, Storybook</td>
         <td>Concevoir interfaces et maquettes</td>
       </tr>
-          <tr>
+      <tr>
         <td>Bots / Discord</td>
         <td>Discord.js, PyCord, permissions, anti-spam</td>
         <td>Créer et gérer des bots, sécuriser le serveur et éviter le spam</td>
       </tr>
     </tbody>
   </table>
+  <a class="back" href="index.html">Retour à l'accueil</a>
 </body>
 </html>
