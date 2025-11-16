@@ -1,165 +1,49 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mon Super Repo ✨</title>
-  <meta name="description" content="Page d'accueil GitHub Pages — stylée, responsive et prête à épater." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accueil Dev Tools</title>
   <style>
-    :root{
-      --bg1:#0f172a; /* night */
-      --bg2:#071032; /* deep */
-      --accent1:#7c3aed; /* violet */
-      --accent2:#06b6d4; /* cyan */
-      --glass: rgba(255,255,255,0.06);
-      --glass-2: rgba(255,255,255,0.03);
-      --muted: rgba(255,255,255,0.6);
-      --maxw:1100px;
-      color-scheme: dark;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-      background: radial-gradient(1200px 600px at 10% 20%, rgba(124,58,237,0.10), transparent 8%),
-                  radial-gradient(1000px 500px at 90% 80%, rgba(6,182,212,0.08), transparent 10%),
-                  linear-gradient(180deg,var(--bg1),var(--bg2));
-      color:#e6eef8;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      padding:40px 20px;
-      display:flex;justify-content:center;align-items:flex-start;
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
     }
-    .wrap{width:100%;max-width:var(--maxw)}
-
-    /* Header / Hero */
-    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent1),var(--accent2));box-shadow:0 6px 30px rgba(4,6,23,0.6);font-weight:800;font-size:20px}
-    .brand h1{font-size:18px;margin:0}
-    .brand p{margin:0;font-size:12px;color:var(--muted)}
-    nav{display:flex;gap:12px;align-items:center}
-    a.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02));text-decoration:none;color:inherit;border:1px solid rgba(255,255,255,0.04);font-weight:600}
-    a.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
-
-    /* Hero card */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;background:linear-gradient(180deg,var(--glass),transparent);border-radius:18px;padding:34px;border:1px solid rgba(255,255,255,0.03);backdrop-filter: blur(6px);box-shadow: 0 10px 40px rgba(2,6,23,0.6)}
-    .hero-left h2{font-size:34px;margin:0 0 8px 0;line-height:1.02}
-    .lead{color:var(--muted);margin-bottom:18px}
-    .features{display:flex;gap:12px;flex-wrap:wrap}
-    .pill{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,0.03);font-size:13px}
-
-    /* mockup */
-    .mock{border-radius:12px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
-    .code{background:linear-gradient(180deg, #061226, #04101a);padding:14px;border-radius:10px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono",monospace;font-size:13px;line-height:1.5;color:#b9e6ff;overflow:auto}
-    .code .k{color:#ffb86b} .code .s{color:#7ee787} .code .n{color:#9ba8ff}
-
-    /* CTA */
-    .ctas{display:flex;gap:12px;margin-top:16px}
-    .primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));box-shadow:0 8px 32px rgba(9,10,20,0.6);border:none}
-
-    /* Sections */
-    section{margin-top:28px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--glass-2);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-
-    footer{margin-top:28px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
-
-    /* tiny animations */
-    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
-    .logo{animation:floaty 6s ease-in-out infinite}
-
-    /* responsive */
-    @media (max-width:920px){
-      .hero{grid-template-columns:1fr}
-      .mock{order:-1}
-      .grid-3{grid-template-columns:1fr}
-      header{flex-direction:column;align-items:flex-start;gap:12px}
-      nav{width:100%;justify-content:flex-end}
+    p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+    a {
+      padding: 15px 30px;
+      background: #fff;
+      color: #764ba2;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.3s, color 0.3s;
+    }
+    a:hover {
+      background: #764ba2;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">GH</div>
-        <div>
-          <h1>MonRepo — page d'accueil</h1>
-          <p>Une page qui tâche pas — juste épique.</p>
-        </div>
-      </div>
-      <nav>
-        <a class="btn ghost" href="#features">Fonctionnalités</a>
-        <a class="btn" href="#demo">Demo</a>
-        <a class="btn" href="https://github.com/" target="_blank">Voir sur GitHub</a>
-      </nav>
-    </header>
-
-    <main class="hero" role="main">
-      <div class="hero-left">
-        <h2>Fais briller ton repo sur GitHub Pages ✨</h2>
-        <p class="lead">Template minimal, performant et stylé — parfait pour une page d'accueil qui claque. Clone, modifie, déploie.</p>
-
-        <div class="features">
-          <span class="pill">Responsive</span>
-          <span class="pill">Accessible</span>
-          <span class="pill">Lightweight</span>
-          <span class="pill">Dark-first</span>
-        </div>
-
-        <div class="ctas">
-          <a class="btn primary" href="#" onclick="alert('Copie le fichier index.html dans la racine de ton repo et active GitHub Pages !')">Installer</a>
-          <a class="btn" href="#">Personnaliser</a>
-        </div>
-
-        <div style="margin-top:18px;color:var(--muted);font-size:13px">Besoin d'un thème Tailwind ou d'une version React ? Dis-moi ce que tu veux.</div>
-      </div>
-
-      <aside class="mock" id="demo">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-          <div style="font-size:13px;color:var(--muted)">index.html</div>
-          <div style="font-size:11px;color:var(--muted)">MonRepo • main</div>
-        </div>
-
-        <pre class="code"><code>&lt;!-- Exemple d'installation rapide --&gt;
-&lt;!doctype html&gt;
-&lt;html lang="fr"&gt;
-  &lt;head&gt;&lt;meta charset="utf-8"/&gt;&lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Bienvenue sur MonRepo&lt;/h1&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-
-&lt;!-- Personnalise le contenu, pushes &amp; active GitHub Pages → / (main branch) --&gt;
-</code></pre>
-      </aside>
-    </main>
-
-    <section id="features">
-      <div class="grid-3">
-        <div class="card">
-          <h3>Rapide à déployer</h3>
-          <p class="lead">Un seul fichier — clone, modifie, push. GitHub Pages prend le relais.</p>
-        </div>
-        <div class="card">
-          <h3>Design moderne</h3>
-          <p class="lead">Dégradés subtils, glassmorphism et animations discrètes pour un effet pro.</p>
-        </div>
-        <div class="card">
-          <h3>Extensible</h3>
-          <p class="lead">Ajoute Tailwind, React ou un générateur statique — la structure est prête.</p>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div>© <strong>MonRepo</strong> — crée avec ❤️</div>
-      <div>Astuce: renomme ce fichier en <code>index.html</code> et place-le à la racine de ton repo.</div>
-    </footer>
-  </div>
+  <h1>Bienvenue dans le guide des outils de développement</h1>
+  <p>Découvrez tous les outils essentiels pour développer sur Discord et ZetaRP.</p>
+  <a href="tableau.html">Accéder au tableau des outils</a>
 </body>
 </html>
