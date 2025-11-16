@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support Tickets</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #0f172a; color: #fff; padding: 40px; }
+  h1 { text-align:center; margin-bottom: 20px; }
+  form { display:flex; flex-direction:column; gap:10px; max-width:400px; margin:auto; }
+  input, textarea, button { padding:10px; border-radius:5px; border:none; }
+  input, textarea { width:100%; }
+  button { background:#764ba2; color:#fff; cursor:pointer; }
+  ul { margin-top:20px; max-width:600px; margin:auto; padding:0; list-style:none; }
+  li { background: rgba(255,255,255,0.1); padding:10px; margin-bottom:10px; border-radius:8px; }
+</style>
+</head>
+<body>
+
+<h1>Ouvrir un ticket</h1>
+
+<form id="ticketForm">
+  <input type="text" id="name" placeholder="Votre nom" required>
+  <input type="email" id="email" placeholder="Votre email" required>
+  <textarea id="message" placeholder="Votre message" rows="4" required></textarea>
+  <button type="submit">Envoyer le ticket</button>
+</form>
+
+<h2>Vos tickets</h2>
+<ul id="ticketList"></ul>
+
+<script>
+const ticketForm = document.getElementById('ticketForm');
+const ticketList = document.getElementById('ticketList');
+
+function loadTickets() {
+  const tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
+  ticketList.innerHTML = '';
+  tickets.forEach((t, i) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<strong>${t.name} (${t.email})</strong><br>${t.message}`;
+    ticketList.appendChild(li);
+  });
+}
+
+ticketForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
+  tickets.push({
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value
+  });
+  localStorage.setItem('tickets', JSON.stringify(tickets));
+  ticketForm.reset();
+  loadTickets();
+});
+
+loadTickets();
+</script>
+
+</body>
+</html>
