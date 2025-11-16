@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mon projet — Page d'accueil</title>
+  <meta name="description" content="Page d'accueil stylée pour GitHub Pages — hero, features, call-to-action, et lien vers le repo." />
+  <meta property="og:title" content="Mon projet — Page d'accueil" />
+  <meta property="og:description" content="Page d'accueil stylée pour GitHub Pages" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+
+  <!-- Tailwind CDN (vite + small config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#6D28D9',
+            accent: '#06B6D4'
+          },
+          animation: {
+            float: 'float 6s ease-in-out infinite',
+            'bg-pan': 'bg-pan 12s linear infinite'
+          },
+          keyframes: {
+            float: {
+              '0%,100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' }
+            },
+            'bg-pan': {
+              '0%': { 'background-position': '0% 50%' },
+              '50%': { 'background-position': '100% 50%' },
+              '100%': { 'background-position': '0% 50%' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Extra polish */
+    .glass { backdrop-filter: blur(6px) saturate(120%); background-color: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
+    .neon { text-shadow: 0 2px 20px rgba(109,40,217,0.35); }
+    .gradient-animated {
+      background: linear-gradient(90deg, #7c3aed 0%, #06b6d4 40%, #ef4444 70%, #f59e0b 100%);
+      background-size: 200% 200%;
+    }
+  </s
